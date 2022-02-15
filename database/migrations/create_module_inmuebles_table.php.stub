@@ -1,0 +1,49 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('departamentos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->timestamps();
+        });
+
+        Schema::create('provincias', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('departamento_id')->constrained('departamentos');
+            $table->string('nombre');
+            $table->timestamps();
+        });
+
+        Schema::create('distritos', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('provincia_id')->constrained('provincias');
+            $table->string('nombre');
+            $table->timestamps();
+        });
+
+        Schema::create('module_inmuebles_table', function (Blueprint $table) {
+            $table->id();
+
+            foreach(config('module-inmuebles.foreignid') as $name => $field){
+                $table->foreignId($name)->constrained($field[0]);
+            }
+
+            foreach(config('module-inmuebles.migrations') as $name => $field){
+                if(count($field)>1){
+                    $table->{$field[0]}($name)->{$field[1]}();
+                }else{
+                    $table->{$field[0]}($name);
+                }
+            }
+
+            $table->timestamps();
+        });
+    }
+};

@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Bolsainmobiliariape\ModuleInmuebles\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ModuleInmueblesCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'module-inmuebles';
 
     public $description = 'My command';
 
