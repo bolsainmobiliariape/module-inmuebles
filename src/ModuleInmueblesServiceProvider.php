@@ -2,13 +2,20 @@
 
 namespace Bolsainmobiliariape\ModuleInmuebles;
 
+use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Inmuebles\Form;
+use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Inmuebles\Index;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Livewire\Livewire;
 
 class ModuleInmueblesServiceProvider extends PackageServiceProvider
 {
     public function bootingPackage()
     {
+
+        Livewire::component('dashboard.inmuebles.index', Index::class);
+        Livewire::component('dashboard.inmuebles.form', Form::class);
+
         $this->publishes([
             __DIR__ . '/../database/seeds/' => database_path('seeders/'),
         ], 'module-inmuebles-seeds');
@@ -24,7 +31,8 @@ class ModuleInmueblesServiceProvider extends PackageServiceProvider
         $package
             ->name('module-inmuebles')
             ->hasConfigFile()
-            // ->hasViews()
+            ->hasViews()
+            ->hasRoute('inmuebles')
             ->hasMigration('create_module_inmuebles_table');
     }
 }

@@ -19,10 +19,10 @@ class Distrito extends Model
      * 
      * 
      */
-    // public function inmuebles()
-    // {
-    //     return $this->hasMany('App\Models\Inmueble');
-    // }
+    public function inmuebles()
+    {
+        return $this->hasMany(Inmueble::class);
+    }
 
     /**
      * Get the provincia that owns the distrito.

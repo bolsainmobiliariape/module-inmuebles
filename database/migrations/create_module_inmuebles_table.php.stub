@@ -28,7 +28,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('module_inmuebles_table', function (Blueprint $table) {
+        Schema::create('inmuebles', function (Blueprint $table) {
             $table->id();
 
             foreach(config('module-inmuebles.foreignid') as $name => $field){
@@ -43,6 +43,13 @@ return new class extends Migration
                 }
             }
 
+            $table->timestamps();
+        });
+
+        Schema::create('photos', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('inmueble_id')->constrained('inmuebles');
+            $table->text('path');
             $table->timestamps();
         });
     }
