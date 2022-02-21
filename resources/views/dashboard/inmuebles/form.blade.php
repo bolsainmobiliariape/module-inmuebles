@@ -79,16 +79,16 @@
     
     <div class="col-span-6">
         <div class="grid grid-cols-2 gap-4">
-            <x-form.image-field wire:model="picture" name="picture" label="Imagen {{ empty($inmueble->id) ? '*' : ''}}" :path="isset($inmueble->photo[1]) ? (string) url(Storage::url($inmueble->photo[1]->path)) : 'null'"/>
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[2]) ? (string) url(Storage::url($inmueble->photo[2]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[3]) ? (string) url(Storage::url($inmueble->photo[3]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[4]) ? (string) url(Storage::url($inmueble->photo[4]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[5]) ? (string) url(Storage::url($inmueble->photo[5]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[6]) ? (string) url(Storage::url($inmueble->photo[6]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[7]) ? (string) url(Storage::url($inmueble->photo[7]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[8]) ? (string) url(Storage::url($inmueble->photo[8]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[9]) ? (string) url(Storage::url($inmueble->photo[9]->path)) : 'null'" />
-            <x-form.image-field wire:model="picture" name="picture" :path="isset($inmueble->photo[10]) ? (string) url(Storage::url($inmueble->photo[10]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.1" name="picture" label="Imagen {{ empty($inmueble->id) ? '*' : ''}}" :path="isset($inmueble->photo[0]) ? (string) url(Storage::url($inmueble->photo[0]->path)) : 'null'"/>
+            <x-form.image-field wire:model="picture.2" name="picture" :path="isset($inmueble->photo[1]) ? (string) url(Storage::url($inmueble->photo[1]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.3" name="picture" :path="isset($inmueble->photo[2]) ? (string) url(Storage::url($inmueble->photo[2]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.4" name="picture" :path="isset($inmueble->photo[3]) ? (string) url(Storage::url($inmueble->photo[3]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.5" name="picture" :path="isset($inmueble->photo[4]) ? (string) url(Storage::url($inmueble->photo[4]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.6" name="picture" :path="isset($inmueble->photo[5]) ? (string) url(Storage::url($inmueble->photo[5]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.7" name="picture" :path="isset($inmueble->photo[6]) ? (string) url(Storage::url($inmueble->photo[6]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.8" name="picture" :path="isset($inmueble->photo[7]) ? (string) url(Storage::url($inmueble->photo[7]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.9" name="picture" :path="isset($inmueble->photo[8]) ? (string) url(Storage::url($inmueble->photo[8]->path)) : 'null'" />
+            <x-form.image-field wire:model="picture.10" name="picture" :path="isset($inmueble->photo[9]) ? (string) url(Storage::url($inmueble->photo[9]->path)) : 'null'" />
         </div>
     </div>
 

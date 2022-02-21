@@ -20,10 +20,10 @@
                                     {{$inmueble->id}}
                                 </x-table.cell>
                                 <x-table.cell>
-                                    <img src="{{ Storage::url($inmueble->picture) }}" alt="{{$inmueble->title}}">
+                                    <img src="{{ Storage::url($inmueble->imagen()) }}" alt="{{$inmueble->title}}">
                                 </x-table.cell>
                                 <x-table.cell>
-                                    {{ $inmueble->title }}
+                                    {{ $inmueble->titulo() }}
                                 </x-table.cell>
                                 <x-table.cell>
                                     {{ $inmueble->description }}

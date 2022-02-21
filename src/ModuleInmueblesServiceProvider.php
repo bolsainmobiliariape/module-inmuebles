@@ -2,6 +2,7 @@
 
 namespace Bolsainmobiliariape\ModuleInmuebles;
 
+use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Components\Filters;
 use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Inmuebles\Form;
 use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Inmuebles\Index;
 use Spatie\LaravelPackageTools\Package;
@@ -15,6 +16,8 @@ class ModuleInmueblesServiceProvider extends PackageServiceProvider
 
         Livewire::component('dashboard.inmuebles.index', Index::class);
         Livewire::component('dashboard.inmuebles.form', Form::class);
+
+        Livewire::component('inmuebles.filters', Filters::class);
 
         $this->publishes([
             __DIR__ . '/../database/seeds/' => database_path('seeders/'),

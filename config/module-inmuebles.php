@@ -29,21 +29,21 @@ return [
         'inmueble.operation' => ['string'],
         'inmueble.slug' => ['nullable','string'],
         'inmueble.description' => ['string'],
-        'inmueble.price' => ['string'],
-        'inmueble.soles' => ['string'],
+        'inmueble.price' => ['integer'],
+        'inmueble.soles' => ['integer'],
         'inmueble.ubication' => ['string'],
-        'inmueble.area_terreno' => ['string'],
-        'inmueble.area_construida' => ['string'],
-        'inmueble.dormitorios' => ['string'],
-        'inmueble.banos' => ['string'],
-        'inmueble.garages' => ['string'],
+        'inmueble.area_terreno' => ['integer'],
+        'inmueble.area_construida' => ['integer'],
+        'inmueble.dormitorios' => ['integer'],
+        'inmueble.banos' => ['integer'],
+        'inmueble.garages' => ['integer'],
         'inmueble.antiguedad' => ['string'],
         'inmueble.lat' => ['nullable','integer'],
         'inmueble.lng' => ['nullable','integer'],
 
-        'picture.*' => ['image'],
-        'inmueble.user_id' => ['required'],
-        'inmueble.distrito_id' => ['required']
+        "picture.*" => ["image"],
+        "inmueble.user_id" => ['required'],
+        "inmueble.distrito_id" => ['required']
     ],
     
     'migrations' => [

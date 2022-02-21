@@ -10,7 +10,7 @@ use Bolsainmobiliariape\ModuleInmuebles\Models\Provincia;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Form extends Component
@@ -63,11 +63,17 @@ class Form extends Component
         $this->inmueble->slug = Str::slug($slug);
 
 
-        foreach($this->picture as $image){
+        $photos = $this->inmueble->photo;
+        foreach($this->picture as $key => $image){
+            if (isset($photos[$key]) && isset($image)) {
+                Storage::delete($photos[$key]->path);
+                $photos[$key]->update(['path'=>$image->store('public/inmuebles')]);
+            }elseif(isset($image)){
                 Photo::create([
                     'inmueble_id' => $this->inmueble->id,
                     'path' => $image->store('public/inmuebles'),
                 ]);
+            }
         }
 
         $this->inmueble->save();

@@ -35,7 +35,7 @@ class Inmueble extends Model
      */
     public function distrito()
     {
-        return $this->belongsTo(Distrito::class);
+        return $this->belongsTo(Distrito::class, "distrito_id", "id");
     }
 
     /**
@@ -54,8 +54,9 @@ class Inmueble extends Model
      */
     public function imagen()
     {
-        if (count($this->photo)) {
-            return Storage::url($this->photo[0]->path);
+        $photos = $this->photo;
+        if (count($photos)>0) {
+            return $photos[0]->path;
         }
 
         return '/img/default-inmueble.png';
@@ -77,7 +78,7 @@ class Inmueble extends Model
      */
     public function titulo()
     {
-        return ucfirst($this->operacion)." de $this->tipo en " . $this->direccion();
+        return ucfirst($this->operation)." de {$this->type} en " . $this->direccion();
     }
 
     /**
