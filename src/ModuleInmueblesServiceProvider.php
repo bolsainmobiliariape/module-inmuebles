@@ -5,6 +5,7 @@ namespace Bolsainmobiliariape\ModuleInmuebles;
 use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Components\Filters;
 use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Inmuebles\Form;
 use Bolsainmobiliariape\ModuleInmuebles\Http\Livewire\Dashboard\Inmuebles\Index;
+use Bolsainmobiliariape\ModuleInmuebles\Commands\ModuleInmueblesCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Livewire\Livewire;
@@ -36,6 +37,7 @@ class ModuleInmueblesServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasRoute('inmuebles')
-            ->hasMigration('create_module_inmuebles_table');
+            ->hasMigration('create_module_inmuebles_table')
+            ->hasCommand(ModuleInmueblesCommand::class);
     }
 }
