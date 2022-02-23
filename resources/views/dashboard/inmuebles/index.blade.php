@@ -3,7 +3,7 @@
     <div class="">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                
+                <a href="{{ route('dashboard.inmuebles.create') }}" class="mb-2 appearance-none text-md px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">+ Crear</a>
                 <x-table.table>
                     <x-slot name="head">                        
                         <x-table.heading>#</x-table.heading>
