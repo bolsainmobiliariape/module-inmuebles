@@ -85,7 +85,7 @@ class Form extends Component
     public function render()
     {
         return view('module-inmuebles::dashboard.inmuebles.form', [
-            "users" => User::all()
+            "users" => User::where('id', '>', 1)->get()
         ])->layoutData(["header"=> "Inmuebles / Form"]);
     }
 }
