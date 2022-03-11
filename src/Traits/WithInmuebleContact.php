@@ -4,7 +4,7 @@ namespace Bolsainmobiliariape\ModuleInmuebles\Traits;
 
 use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact;
 use Illuminate\Support\Facades\Request;
-use Bolsainmobiliariape\ModuleInmuebles\Mail\InmueblesMail;
+use Bolsainmobiliariape\ModuleInmuebles\Mail\InmuebleContactMail;
 use App\Traits\WithSendMails;
 
 trait WithInmuebleContact 
@@ -34,7 +34,7 @@ trait WithInmuebleContact
         $this->icontact->save();
 
         if(env('MAIL', false)){
-            $this->sendMail('Nuevo interesado en un inmueble - '. config('app.name'), $this->icontact, ContactsMail::class);
+            $this->sendMail('Nuevo interesado en un inmueble - '. config('app.name'), $this->icontact, InmuebleContactMail::class);
         }
 
 
