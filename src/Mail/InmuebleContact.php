@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact;
+use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact as ModelContact;
 
 class InmuebleContact extends Mailable
 {
@@ -15,7 +15,7 @@ class InmuebleContact extends Mailable
     public $InmuebleContact;
     public $names ;
 
-    public function __construct(InmuebleContact $InmuebleContact)
+    public function __construct(ModelContact $InmuebleContact)
     {
         $this->InmuebleContact = $InmuebleContact;
         $this->names = [
