@@ -19,6 +19,7 @@
     <div class="col-span-6">
         <x-form.label for="operation" value="{{ __('Operacion') }}" />
         <select id="operation" class="form-select mt-1 block w-full" name="operation" wire:model="inmueble.operation" required>
+            <option value="">Operacion</option>
             <option value="venta">Venta</option>
             <option value="alquiler">Alquiler</option>
         </select>
@@ -28,6 +29,7 @@
     <div class="col-span-6">
         <x-form.label for="type" value="{{ __('Tipo de inmueble') }}" />
         <select id="type" class="form-select mt-1 block w-full" name="type" wire:model="inmueble.type" required>
+            <option value="">Inmueble</option>
             <option value="casa">Casa</option>
             <option value="departamento">Departamento</option>
             <option value="terreno">Terreno</option>
