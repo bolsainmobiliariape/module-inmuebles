@@ -24,7 +24,7 @@ class InmuebleContact extends Mailable
             'phone' => "Telefono",
             'email' => "Email",
             'message' => "Mensaje",
-        ]
+        ];
 
     }
 
