@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact;
 
-class InmuebleContactMail extends Mailable
+class InmuebleContact extends Mailable
 {
     use Queueable, SerializesModels;
 

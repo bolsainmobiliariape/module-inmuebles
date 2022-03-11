@@ -4,7 +4,7 @@ namespace Bolsainmobiliariape\ModuleInmuebles\Traits;
 
 use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact;
 use Illuminate\Support\Facades\Request;
-use Bolsainmobiliariape\ModuleInmuebles\Mail\InmuebleContactMail;
+use Bolsainmobiliariape\ModuleInmuebles\Mail\InmuebleContact as InmuebleContactMail;
 use App\Traits\WithSendMails;
 
 trait WithInmuebleContact 
