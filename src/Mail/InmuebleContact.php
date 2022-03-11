@@ -1,6 +1,6 @@
 <?php
 
-namespace Bolsainmobiliariape\ModuleInmuebleContact\Mail;
+namespace Bolsainmobiliariape\ModuleInmuebles\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
