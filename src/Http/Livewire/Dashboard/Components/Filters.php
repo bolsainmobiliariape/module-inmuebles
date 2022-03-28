@@ -31,6 +31,11 @@ class Filters extends Component
         'asesor'
     ];
 
+    public function submit()
+    {
+        
+    }
+
     public function render()
     {
         $inmuebles = new Inmueble;
