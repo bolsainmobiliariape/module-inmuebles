@@ -10,6 +10,9 @@ class Filters extends Component
 {
     use WithPagination;
 
+    protected $paginationTheme = 'bootstrap';
+
+
     // public Inmueble $inmueble;
     public $slug;
     public $operacion;
