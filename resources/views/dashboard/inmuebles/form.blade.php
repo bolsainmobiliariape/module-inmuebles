@@ -94,15 +94,16 @@
         </div>
     </div>
 
-    @if($map)
     <div class="col-span-6">
         <label class="col-span-6">
             <span class="text-gray-700">Ubicacion (Opcional)</span>
-            <input class="form-input mt-1 block w-full" type="text" placeholder="Ubicacion" name="ubicacion" required wire:model="inmueble.ubication" value="{{ old('inmueble.ubicacion') }}" id="searchMap">
+            <input class="form-input mt-1 block w-full" type="text" placeholder="Ubicacion" name="ubicacion" wire:model="inmueble.ubication" value="{{ old('inmueble.ubicacion') }}" id="searchMap">
             @error('inmueble.ubication') <p class="text-sm text-red-600 mt-2">{{ $message }}</p> @enderror
         </label>
     </div>
 
+
+    @if(env('GMAP_KEY'))
     <div class="col-span-6">
         <input type="hidden" name="lng" id="lng" value="">
         <input type="hidden" name="lat" id="lat" value="">
@@ -174,7 +175,7 @@
         @error('inmueble.soles') <p class="text-sm text-red-600 mt-2">{{ $message }}</p> @enderror
     </label>
 
-    @if($map)
+    @if(env('GMAP_KEY'))
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GMAP_KEY') }}&callback=initMap&libraries=places" async defer></script> 
     <script>
             var map;
