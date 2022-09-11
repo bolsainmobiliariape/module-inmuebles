@@ -6,6 +6,9 @@ use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Traits\WithSorting;
+use Maatwebsite\Excel\Facades\Excel;
+use Bolsainmobiliariape\ModuleInmuebles\Exports\InmuebleContacsExport;
+
 
 class Index extends Component
 {
@@ -40,5 +43,10 @@ class Index extends Component
         return view('module-inmuebles::dashboard.inmueblescontactos.index', [
             'contacts' => InmuebleContact::orderBy($this->sortField, $this->sortDirection)->paginate($this->perPage),
         ])->layoutData(['header'=>'Inmueble Contactos']);
+    }
+
+    public function export()
+    {
+        return Excel::download(new InmuebleContacsExport, 'InmuebleContacts.xlsx');
     }
 }
