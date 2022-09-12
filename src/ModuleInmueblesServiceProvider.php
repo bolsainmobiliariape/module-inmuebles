@@ -17,6 +17,7 @@ class ModuleInmueblesServiceProvider extends PackageServiceProvider
 
         Livewire::component('dashboard.inmuebles.index', Index::class);
         Livewire::component('dashboard.inmuebles.form', Form::class);
+        Livewire::component('dashboard.inmueblescontactos.index', Form::class);
 
         Livewire::component('inmuebles.filters', Filters::class);
 
