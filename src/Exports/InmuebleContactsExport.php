@@ -13,11 +13,7 @@ class InmuebleContactsExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        $arra = array('inmueble',
-            'name',
-            'phone,',
-            'email',
-            'message');
+        $arra = array('inmueble', 'name', 'phone', 'email', 'message');
 
         $merge = array_merge(array('id'), $arra);
         $merge = array_merge($merge, array('created_at'));
@@ -28,9 +24,9 @@ class InmuebleContactsExport implements FromCollection, WithHeadings
     {
         $arra = array('Inmueble',
             'Nombre',
-            'Telefon,o',
+            'Telefono',
             'email',
-            'Menssaje');
+            'Mensaje');
 
         $merge = array_merge(array('id'), $arra);
         $merge = array_merge($merge, array('Hora / Fecha'));
