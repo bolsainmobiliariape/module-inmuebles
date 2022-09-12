@@ -32,8 +32,13 @@ class Form extends Component
 
     public function mount(Inmueble $inmueble)
     {
-        $this->inmueble = $inmueble;
+        $this->inmueble = $inmueble->load('distrito.provincia.departamento');
         $this->departamentos = Departamento::all();
+        $this->departamentoid = $inmueble->distrito->provincia->departamento->id;
+        $this->provinciaid = $inmueble->distrito->provincia->id;
+        $this->provincias = Provincia::where('departamento_id', $this->departamentoid)->get();
+        $this->distritoid = $inmueble->distrito->id;
+        $this->distritos = Distrito::where('provincia_id', $this->provinciaid)->get();
     }
 
     public function updatedDepartamentoid()
@@ -77,7 +82,7 @@ class Form extends Component
         }
 
         $this->inmueble->save();
-        
+
         $this->dispatchBrowserEvent('notice', ['type'=>'success','text'=> 'Se ha guardado con exito!']);
 
     }
