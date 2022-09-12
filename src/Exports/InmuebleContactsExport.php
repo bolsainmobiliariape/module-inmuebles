@@ -13,10 +13,10 @@ class InmuebleContacsExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        $arra = array('inmueble'
-            'name'
-            'phone'
-            'email'
+        $arra = array('inmueble',
+            'name',
+            'phone,',
+            'email',
             'message');
 
         $merge = array_merge(array('id'), $arra);
@@ -26,10 +26,10 @@ class InmuebleContacsExport implements FromCollection, WithHeadings
 
     public function headings() : array
     {
-        $arra = array('Inmueble'
-            'Nombre'
-            'Telefono'
-            'email'
+        $arra = array('Inmueble',
+            'Nombre',
+            'Telefon,o',
+            'email',
             'Menssaje');
 
         $merge = array_merge(array('id'), $arra);
