@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Traits\WithSorting;
 use Maatwebsite\Excel\Facades\Excel;
-use Bolsainmobiliariape\ModuleInmuebles\Exports\InmuebleContacsExport;
+use Bolsainmobiliariape\ModuleInmuebles\Exports\InmuebleContactsExport;
 
 
 class Index extends Component
@@ -47,6 +47,6 @@ class Index extends Component
 
     public function export()
     {
-        return Excel::download(new InmuebleContacsExport, 'InmuebleContacts.xlsx');
+        return Excel::download(new InmuebleContactsExport, 'InmuebleContacts.xlsx');
     }
 }
