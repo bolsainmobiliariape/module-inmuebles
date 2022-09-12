@@ -32,13 +32,16 @@ class Form extends Component
 
     public function mount(Inmueble $inmueble)
     {
+
         $this->inmueble = $inmueble->load('distrito.provincia.departamento');
         $this->departamentos = Departamento::all();
-        $this->departamentoid = $inmueble->distrito->provincia->departamento->id;
-        $this->provinciaid = $inmueble->distrito->provincia->id;
-        $this->provincias = Provincia::where('departamento_id', $this->departamentoid)->get();
-        $this->distritoid = $inmueble->distrito->id;
-        $this->distritos = Distrito::where('provincia_id', $this->provinciaid)->get();
+        if($inmueble->id){
+            $this->departamentoid = $inmueble->distrito->provincia->departamento->id;
+            $this->provinciaid = $inmueble->distrito->provincia->id;
+            $this->provincias = Provincia::where('departamento_id', $this->departamentoid)->get();
+            $this->distritoid = $inmueble->distrito->id;
+            $this->distritos = Distrito::where('provincia_id', $this->provinciaid)->get();
+        }
     }
 
     public function updatedDepartamentoid()
