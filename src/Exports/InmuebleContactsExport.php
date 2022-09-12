@@ -6,7 +6,7 @@ use Bolsainmobiliariape\ModuleInmuebles\Models\InmuebleContact;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class InmuebleContacsExport implements FromCollection, WithHeadings
+class InmuebleContactsExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
