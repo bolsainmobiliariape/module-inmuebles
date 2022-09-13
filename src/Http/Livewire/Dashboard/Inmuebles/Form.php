@@ -56,12 +56,14 @@ class Form extends Component
 
     public function rules()
     {
-        return config('module-inmuebles.rules') ;
+        return config('module-inmuebles.rules');
     }
 
     public function store()
     {
         $this->inmueble->distrito_id = $this->distritoid;
+        $this->inmueble->lat = (string) $this->inmueble->lat;
+        $this->inmueble->lng = (string) $this->inmueble->lng;
         $this->validate();
 
 

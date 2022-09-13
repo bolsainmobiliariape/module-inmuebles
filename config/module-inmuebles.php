@@ -20,7 +20,8 @@ return [
         'garages',
         'antiguedad',
         'lat', 
-        'lng'
+        'lng',
+        'youtube'
     ],
 
     'rules' => [
@@ -38,8 +39,9 @@ return [
         'inmueble.banos' => ['nullable', 'integer'],
         'inmueble.garages' => ['nullable', 'integer'],
         'inmueble.antiguedad' => ['nullable', 'string'],
-        'inmueble.lat' => ['nullable','integer'],
-        'inmueble.lng' => ['nullable','integer'],
+        'inmueble.lat' => ['nullable','string'],
+        'inmueble.lng' => ['nullable','string'],
+        'inmueble.youtube' => ['nullable', 'string'],
 
         "picture.*" => ["image"],
         "inmueble.user_id" => ['required'],
@@ -63,6 +65,7 @@ return [
         'antiguedad' => ['string', 'nullable'],
         'lat' => ['string', 'nullable'],
         'lng' => ['string', 'nullable'],
+        'youtube' => ['string', 'nullable'],
     ],
 
     'foreignid' => [
