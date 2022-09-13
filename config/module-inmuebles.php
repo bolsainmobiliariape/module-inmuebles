@@ -65,7 +65,7 @@ return [
         'antiguedad' => ['string', 'nullable'],
         'lat' => ['string', 'nullable'],
         'lng' => ['string', 'nullable'],
-        'youtube' => ['string', 'nullable'],
+        'youtube' => ['text', 'nullable'],
     ],
 
     'foreignid' => [
