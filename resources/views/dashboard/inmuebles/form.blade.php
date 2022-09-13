@@ -175,6 +175,12 @@
         @error('inmueble.soles') <p class="text-sm text-red-600 mt-2">{{ $message }}</p> @enderror
     </label>
 
+    <label class="col-span-6">
+        <span class="text-gray-700">Youtube (Opcional)</span>
+        <input class="form-input mt-1 block w-full" type="text" placeholder="Youtube" wire:model="inmueble.youtube">
+        @error('inmueble.youtube') <p class="text-sm text-red-600 mt-2">{{ $message }}</p> @enderror
+    </label>
+
     @if(env('GMAP_KEY'))
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GMAP_KEY') }}&callback=initMap&libraries=places" async defer></script> 
     <script>
