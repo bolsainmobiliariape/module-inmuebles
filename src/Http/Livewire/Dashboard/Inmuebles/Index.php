@@ -30,7 +30,7 @@ class Index extends Component
                         'distrito' => function($query) use ($param) {
                             $query->where('nombre', 'like', '%'. $param. '%');
                         }
-                    ])->where('direccion', 'like', '%'. $param . '%');
+                    ])->where('ubication', 'like', '%'. $param . '%');
                 })
                 ->paginate($this->perPage)
         ]);
