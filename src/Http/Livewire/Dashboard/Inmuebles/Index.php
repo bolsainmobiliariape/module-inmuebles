@@ -26,11 +26,9 @@ class Index extends Component
         return view('module-inmuebles::dashboard.inmuebles.index', [
             'inmuebles' => Inmueble::query()
                 ->when($this->search, function ($query, $param){
-                    $query->with([
-                        'distrito' => function($query) use ($param) {
-                            $query->where('nombre', 'like', '%'. $param. '%');
-                        }
-                    ])->where('ubication', 'like', '%'. $param . '%');
+                    $query->whereHas('distrito', function($query) use ($param) {
+                        $query->where('nombre', 'like', '%'. $param. '%');
+                    })->orWhere('ubication', 'like', '%'. $param . '%');
                 })
                 ->paginate($this->perPage)
         ]);
