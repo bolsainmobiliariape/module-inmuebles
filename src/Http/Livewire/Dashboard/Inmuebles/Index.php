@@ -24,7 +24,15 @@ class Index extends Component
     public function render()
     {
         return view('module-inmuebles::dashboard.inmuebles.index', [
-            'inmuebles' => Inmueble::paginate($this->perPage)
+            'inmuebles' => Inmueble::query()
+                ->when($this->search, function ($query, $param){
+                    $query->with([
+                        'distrito' => function($query) use ($param) {
+                            $query->where('nombre', 'like', '%'. $param. '%');
+                        }
+                    ])->where('direccion', 'like', '%'. $param . '%');
+                })
+                ->paginate($this->perPage)
         ]);
     }
 }
